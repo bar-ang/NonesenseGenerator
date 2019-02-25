@@ -17,12 +17,15 @@ class Var(enum.Enum):
     COMMA               = 12
     PRONOUN             = 13
     ADVERB              = 14
-    SUBORDINATOR        = 16
+    SUBORDINATOR        = 16 #TODO NOT USED
     QUESTION            = 17
     SIMPLE_QUESTION     = 20
     QUESTION_MARK       = 18
     IMPARATIVE_SENTENCE = 19
     QUESTION_VERB       = 21
+    ADJUNCT_PHRASE      = 22
+    ADJUNCT             = 23 #TODO NOT USED
+    NOT_CLAUSE          = 24
 
 TERMINALS = {
         Var.PRONOUN             : ["I", "you", "he", "she", "it", "they", "we"],
@@ -96,6 +99,7 @@ RULES = {
 
         Var.VERB_PHRASE : [
             [Var.VERB],
+            [Var.NOT_CLAUSE, Var.VERB]
         ],
 
         Var.VERB : [
