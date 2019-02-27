@@ -36,12 +36,14 @@ for pos in INVENTORY.keys():
     random.shuffle(INVENTORY[pos])
 
 def is_terminal(var):
-    return var in DYNAMIC_TERMINALS.keys()
+    return var in DYNAMIC_TERMINALS.keys() or var in TERMINALS.keys()
 
 def random_word(var):
     if var in DYNAMIC_TERMINALS:
         part_of_speech = DYNAMIC_TERMINALS[var]
         return INVENTORY[part_of_speech].pop()
+    elif var in TERMINALS:
+        return random.choice(TERMINALS[var])
     else:
         assert False, "%d is not a terminal." % var
 
