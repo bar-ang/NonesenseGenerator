@@ -43,54 +43,6 @@ DYNAMIC_TERMINALS = {
         Var.ADVERB      : "adverb",
 }
 
-
-INVENTORY = {}
-
-TERMINALS = {
-        Var.PRONOUN             : ["I", "you", "he", "she", "it", "they", "we"],
-        Var.NOUN                : ["bed", "cookie", "boy", "girl", "sun", "sky", "lollipop", "car",
-                                   "dog", "cat", "hummus", "computer", "coffee", "programmer",
-                                   "firefighter", "policeman", "lawyer", "junkie", "old man",
-                                   "designer", "robot", "iRobot", "tree", "fire", "rabbit", "lizard",
-                                   "system", "chair", "table", "fly", "flee", "bee", "horse", "donkey",
-                                   "pig", "flower", "river", "building", "city", "town", "arab",
-                                   "jew", "russian", "terrorist", "suspect", "man", "woman", "nigger",
-                                   "gay", "straight", "goat", "giraffe", "truth", "wife", "politician",
-                                   "husband", "engineer", "couple", "marrige", "tv", "iphone", "google crome",
-                                   "king", "queen", "prince", "princess", "dragon", "fish", "turkey", "virus",
-                                   "monkey", "hamburger", "fries", "salad", "ice cream", "ketchup",
-                                   "rice", "pasta", "wind", "sea", "ocean"],
-        Var.TRANSITIVE_VERB     : ["eat", "make", "want", "is", "kiss", "call", "touch", "develop",
-                                   "watch", "drown", "drive", "turn on", "turn off", "kill", "like",
-                                   "love", "observe", "hear", "smell", "taste", "learn", "suspect", "close",
-                                   "scare", "adore", "throw", "enlarge", "use", "see", "reach", "damage",
-                                   "check"],
-        Var.INTRANSITIVE_VERB   : ["walk", "swim", "play", "sleep", "fly", "cry", "die", "try",
-                                   "listen", "learn", "suspect", "run"],
-        Var.ADJECTIVE           : ["red", "blue", "yellow", "dark", "light", "big", "small", "fat",
-                                   "thin", "greceful", "nerdy", "cool", "sour", "sweet", "hot",
-                                   "spicy", "ugly", "pretty", "good", "bad", "short", "long", "tall",
-                                   "old", "young", "far", "close", "poor", "slow", "fast", "shiny", "gay",
-                                   "stright", "black", "chinese", "french", "english", "jewish", "muslim",
-                                   "buddahist", "american", "german", "japanese", "swedish", "dutch", "natural",
-                                   "industrial", "true", "false", "deep", "scary", "terrifying", "adorable",
-                                   "precise", "blurry", "fuzzy", "smart", "dumb", "practical",
-                                   "theoretical", "abstract", "sharp", "smooth", "dry", "wet", "comfortable",
-                                   "jealous", "confident", "inconfident", "2-dimentional", "3-dimentional",],
-        Var.ARTICLE             : ["a", "the"],
-        Var.CONJUNCTION         : ["and", "but", "while", "therefore", "because", "hence",
-                                   "as a result", "despite that", "after", "before", "as soon as",
-                                   "even though", "so that", "then"],
-        Var.ADVERB              : ["freely", "joyfully", "nicely", "hardly", "barely", "perfectly",
-                                   "fastly", "slowly", "sadly", "uncontrollably", "mainly", "peacefully",
-                                   "poorly", "restlessly", "generally", "now", "this morning", "tomorrow",
-                                   "currently", "today"],
-        Var.COMMA               : [",", ";"],
-        Var.QUESTION_MARK       : ["?"],
-        Var.QUESTION_VERB       : ["does"],
-        Var.NOT_CLAUSE          : ["does not"],
-}
-
 RULES = {
         Var.SENTENCE : [
             [Var.IMPARATIVE_SENTENCE],
@@ -143,30 +95,6 @@ RULES = {
             [Var.ARTICLE, Var.ADJECTIVE, Var.NOUN],
         ],
 }
-
-#for tries in range(RETRIES):
-#    try:
-#        word_generator = RandomWords()
-#    except:
-#        pass
-#    else:
-#        break
-#else:
-#    word_generator = RandomWords()
-
-#for part_of_speech in DYNAMIC_TERMINALS.values():
-#    for tries in range(RETRIES):
-#        try:
-#            INVENTORY[part_of_speech] = word_generator.get_random_words(includePartOfSpeech=part_of_speech, limit=INVENTORY_SIZE, minCorpusCount=MIN_CORPUS_COUNT)
-#        except:
-#            pass
-#        else:
-#            break
-#    else:
-#        INVENTORY[part_of_speech] = word_generator.get_random_words(includePartOfSpeech=part_of_speech, limit=INVENTORY_SIZE, minCorpusCount=MIN_CORPUS_COUNT)
-
-
-#print(INVENTORY)
 
 INVENTORY = json.load(open("words.js", "r"))
 for pos in INVENTORY.keys():
