@@ -46,6 +46,8 @@ DYNAMIC_TERMINALS = {
 
 RULES = json.load(open("rules.js", "r"))
 
+import pdb; pdb.set_trace()
+
 INVENTORY = json.load(open("words.js", "r"))
 for pos in INVENTORY.keys():
     random.shuffle(INVENTORY[pos])
