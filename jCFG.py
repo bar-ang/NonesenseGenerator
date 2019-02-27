@@ -18,15 +18,15 @@ DYNAMIC_TERMINALS = {
 INVENTORY = {}
 
 TERMINALS = {
-        Var.PRONOUN             : ["I", "you", "he", "she", "it", "they", "we"],
-        Var.ARTICLE             : ["a", "the"],
-        Var.CONJUNCTION         : ["and", "but", "while", "therefore", "because", "hence",
+        "PRONOUN"             : ["I", "you", "he", "she", "it", "they", "we"],
+        "ARTICLE"             : ["a", "the"],
+        "CONJUNCTION"         : ["and", "but", "while", "therefore", "because", "hence",
                                    "as a result", "despite that", "after", "before", "as soon as",
                                    "even though", "so that", "then"],
-        Var.COMMA               : [",", ";"],
-        Var.QUESTION_MARK       : ["?"],
-        Var.QUESTION_VERB       : ["does"],
-        Var.NOT_CLAUSE          : ["does not"],
+        "COMMA"               : [",", ";"],
+        "QUESTION_MARK"       : ["?"],
+        "QUESTION_VERB"       : ["does"],
+        "NOT_CLAUSE"          : ["does not"],
 }
 
 RULES = json.load(open("rules.js", "r"))
