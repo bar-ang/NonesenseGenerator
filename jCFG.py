@@ -15,9 +15,21 @@ DYNAMIC_TERMINALS = {
         "ADVERB"      : "adverb",
 }
 
-RULES = json.load(open("rules.js", "r"))
+INVENTORY = {}
 
-import pdb; pdb.set_trace()
+TERMINALS = {
+        Var.PRONOUN             : ["I", "you", "he", "she", "it", "they", "we"],
+        Var.ARTICLE             : ["a", "the"],
+        Var.CONJUNCTION         : ["and", "but", "while", "therefore", "because", "hence",
+                                   "as a result", "despite that", "after", "before", "as soon as",
+                                   "even though", "so that", "then"],
+        Var.COMMA               : [",", ";"],
+        Var.QUESTION_MARK       : ["?"],
+        Var.QUESTION_VERB       : ["does"],
+        Var.NOT_CLAUSE          : ["does not"],
+}
+
+RULES = json.load(open("rules.js", "r"))
 
 INVENTORY = json.load(open("words.js", "r"))
 for pos in INVENTORY.keys():
