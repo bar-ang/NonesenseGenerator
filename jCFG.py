@@ -1,4 +1,11 @@
 import enum
+import random
+import json
+from random_word import RandomWords
+
+RETRIES = 5
+INVENTORY_SIZE = 750
+MIN_CORPUS_COUNT = 1500
 
 class Var(enum.Enum):
     SENTENCE            = 0
@@ -26,6 +33,18 @@ class Var(enum.Enum):
     ADJUNCT_PHRASE      = 22
     ADJUNCT             = 23 #TODO NOT USED
     NOT_CLAUSE          = 24
+
+
+DYNAMIC_TERMINALS = {
+        Var.NOUN        : "noun",
+        Var.TRANSITIVE_VERB         : "verb",
+        Var.INTRANSITIVE_VERB       : "verb",
+        Var.ADJECTIVE   : "adjective",
+        Var.ADVERB      : "adverb",
+}
+
+
+INVENTORY = {}
 
 TERMINALS = {
         Var.PRONOUN             : ["I", "you", "he", "she", "it", "they", "we"],
@@ -125,9 +144,46 @@ RULES = {
         ],
 }
 
+#for tries in range(RETRIES):
+#    try:
+#        word_generator = RandomWords()
+#    except:
+#        pass
+#    else:
+#        break
+#else:
+#    word_generator = RandomWords()
+
+#for part_of_speech in DYNAMIC_TERMINALS.values():
+#    for tries in range(RETRIES):
+#        try:
+#            INVENTORY[part_of_speech] = word_generator.get_random_words(includePartOfSpeech=part_of_speech, limit=INVENTORY_SIZE, minCorpusCount=MIN_CORPUS_COUNT)
+#        except:
+#            pass
+#        else:
+#            break
+#    else:
+#        INVENTORY[part_of_speech] = word_generator.get_random_words(includePartOfSpeech=part_of_speech, limit=INVENTORY_SIZE, minCorpusCount=MIN_CORPUS_COUNT)
+
+
+#print(INVENTORY)
+
+INVENTORY = json.load(open("words.js", "r"))
+for pos in INVENTORY.keys():
+    random.shuffle(INVENTORY[pos])
+
+
 def load_cfg():
     pass
 
 def is_terminal(var):
     return var in TERMINALS.keys()
 
+def random_word(var):
+    if var in DYNAMIC_TERMINALS:
+        part_of_speech = DYNAMIC_TERMINALS[var]
+        return INVENTORY[part_of_speech].pop()
+    elif var in TERMINALS:
+        return random.choice(TERMINALS[var])
+    else:
+        assert False, "%d is not a terminal." % var

@@ -1,7 +1,7 @@
 import random
 from jCFG import *
 
-NUM_SENTENCES = 20
+NUM_SENTENCES = 25
 
 DEBUG = True
 
@@ -19,7 +19,7 @@ def pretty(sentence):
 
 def jibberish(root=Var.SENTENCE, parse_tree=PARSE_TREE):
     if is_terminal(root):
-        choice = [random.choice(TERMINALS[root])]
+        choice = [random_word(root)]
         parse_tree[root] = choice
         return choice
 
@@ -31,6 +31,7 @@ def jibberish(root=Var.SENTENCE, parse_tree=PARSE_TREE):
     return sentence
 
 def main(args=None):
+    print("Dictionary loaded successfully.")
     sentences = [pretty(jibberish()) for i in range(NUM_SENTENCES)]
     for i, sen in enumerate(sentences):
         print("(%s) %s" % (i + 1, sen))
