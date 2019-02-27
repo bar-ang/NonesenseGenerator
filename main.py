@@ -17,7 +17,7 @@ def pretty(sentence):
     #        sentence.pop(i)
     return " ".join(sentence).capitalize() + "."
 
-def jibberish(root=Var.SENTENCE, parse_tree=PARSE_TREE):
+def jibberish(root="SENTENCE", parse_tree=PARSE_TREE):
     if is_terminal(root):
         choice = [random_word(root)]
         parse_tree[root] = choice
