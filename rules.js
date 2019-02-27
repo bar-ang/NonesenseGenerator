@@ -1,53 +1,53 @@
 RULES = {
-        Var.SENTENCE : [
-            [Var.IMPARATIVE_SENTENCE],
-            [Var.IMPARATIVE_SENTENCE],
-            [Var.IMPARATIVE_SENTENCE],
-            [Var.QUESTION],
+        "SENTENCE" : [
+            ["IMPARATIVE_SENTENCE"],
+            ["IMPARATIVE_SENTENCE"],
+            ["IMPARATIVE_SENTENCE"],
+            ["QUESTION"],
         ],
 
-        Var.IMPARATIVE_SENTENCE : [
-            [Var.SIMPLE_SENTENCE],
-            [Var.SIMPLE_SENTENCE, Var.COMMA, Var.CONJUNCTION, Var.IMPARATIVE_SENTENCE]
+        "IMPARATIVE_SENTENCE" : [
+            ["SIMPLE_SENTENCE"],
+            ["SIMPLE_SENTENCE", "COMMA", "CONJUNCTION", "IMPARATIVE_SENTENCE"]
         ],
 
-        Var.QUESTION : [
-            [Var.SIMPLE_QUESTION, Var.QUESTION_MARK],
+        "QUESTION" : [
+            ["SIMPLE_QUESTION", "QUESTION_MARK"],
         ],
 
-        Var.SIMPLE_QUESTION : [
-            [Var.QUESTION_VERB, Var.SUBJECT, Var.VERB_PHRASE],
+        "SIMPLE_QUESTION" : [
+            ["QUESTION_VERB", "SUBJECT", "VERB_PHRASE"],
         ],
 
-        Var.SIMPLE_SENTENCE : [
-            [Var.SUBJECT, Var.VERB_PHRASE],
+        "SIMPLE_SENTENCE" : [
+            ["SUBJECT", "VERB_PHRASE"],
         ],
 
-        Var.VERB_PHRASE : [
-            [Var.VERB],
-            [Var.NOT_CLAUSE, Var.VERB]
+        "VERB_PHRASE" : [
+            ["VERB"],
+            ["NOT_CLAUSE", "VERB"]
         ],
 
-        Var.VERB : [
-            [Var.TRANSITIVE_VERB, Var.OBJECT],
-            [Var.INTRANSITIVE_VERB],
-            [Var.TRANSITIVE_VERB, Var.OBJECT, Var.ADVERB],
-            [Var.INTRANSITIVE_VERB, Var.ADVERB],
-            [Var.ADVERB, Var.TRANSITIVE_VERB, Var.OBJECT],
+        "VERB" : [
+            ["TRANSITIVE_VERB", "OBJECT"],
+            ["INTRANSITIVE_VERB"],
+            ["TRANSITIVE_VERB", "OBJECT", "ADVERB"],
+            ["INTRANSITIVE_VERB", "ADVERB"],
+            ["ADVERB", "TRANSITIVE_VERB", "OBJECT"],
         ],
 
-        Var.SUBJECT : [
-            [Var.NOUN_PHRASE],
-            [Var.PRONOUN],
+        "SUBJECT" : [
+            ["NOUN_PHRASE"],
+            ["PRONOUN"],
         ],
 
-        Var.OBJECT : [
-            [Var.NOUN_PHRASE],
+        "OBJECT" : [
+            ["NOUN_PHRASE"],
         ],
 
-        Var.NOUN_PHRASE : [
-            [Var.ARTICLE, Var.NOUN],
-            [Var.ARTICLE, Var.ADJECTIVE, Var.NOUN],
+        "NOUN_PHRASE" : [
+            ["ARTICLE", "NOUN"],
+            ["ARTICLE", "ADJECTIVE", "NOUN"],
         ],
 }
 
