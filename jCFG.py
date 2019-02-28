@@ -22,10 +22,13 @@ TERMINALS = {
         "CONJUNCTION"         : ["and", "but", "while", "therefore", "because", "hence",
                                    "as a result", "despite that", "after", "before", "as soon as",
                                    "even though", "so that", "then"],
-        "COMMA"               : [",", ";"],
+        "COMMA"               : [","],
         "QUESTION_MARK"       : ["?"],
         "QUESTION_VERB"       : ["does"],
         "NOT_CLAUSE"          : ["does not"],
+        "SUBORDINATOR"        : ["that", "who", "which"],
+        "INTERROGATIVE"       : ["what", "where", "when", "why", "how", "which"],
+        "BE"                  : ["is"],
 }
 
 RULES = json.load(open("rules.js", "r"))
