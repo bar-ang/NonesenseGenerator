@@ -1,44 +1,20 @@
 {
-    "SENTENCE" : [
-        ["IMPARATIVE_SENTENCE"],
-        ["IMPARATIVE_SENTENCE"],
-        ["IMPARATIVE_SENTENCE"],
+    "SPEECH" : [
+        ["SENTENCE"],
         ["QUESTION"]
     ],
-    
-    "IMPARATIVE_SENTENCE" : [
+
+    "SENTENCE" : [
         ["SIMPLE_SENTENCE"],
-        ["SIMPLE_SENTENCE", "COMMA", "CONJUNCTION", "IMPARATIVE_SENTENCE"]
-    ],
-
-    "QUESTION" : [
-        ["SIMPLE_QUESTION", "QUESTION_MARK"]
-    ],
-
-    "SIMPLE_QUESTION" : [
-        ["QUESTION_VERB", "SUBJECT", "VERB_PHRASE"]
+        ["SENTENCE", "COMMA", "CONJUNCTION", "SIMPLE_SENTENCE"]
     ],
 
     "SIMPLE_SENTENCE" : [
-        ["SUBJECT", "VERB_PHRASE"]
-    ],
-
-    "VERB_PHRASE" : [
-        ["VERB"],
-        ["NOT_CLAUSE", "VERB"]
-    ],
-
-    "VERB" : [
-        ["TRANSITIVE_VERB", "OBJECT"],
-        ["INTRANSITIVE_VERB"],
-        ["TRANSITIVE_VERB", "OBJECT", "ADVERB"],
-        ["INTRANSITIVE_VERB", "ADVERB"],
-        ["ADVERB", "TRANSITIVE_VERB", "OBJECT"]
+        ["SUBJECT", "ACTION"]
     ],
 
     "SUBJECT" : [
-        ["NOUN_PHRASE"],
-        ["PRONOUN"]
+        ["NOUN_PHRASE"]
     ],
 
     "OBJECT" : [
@@ -48,6 +24,13 @@
     "NOUN_PHRASE" : [
         ["ARTICLE", "NOUN"],
         ["ARTICLE", "ADJECTIVE", "NOUN"]
+    ],
+
+    "ACTION" : [
+        ["VERB"],
+        ["VERB", "OBJECT"],
+        ["VERB", "ADVERB", "OBJECT"],
+        ["VERB", "OBJECT", "ADVERB"]
     ]
 }
 
