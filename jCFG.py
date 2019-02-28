@@ -9,8 +9,7 @@ MIN_CORPUS_COUNT = 1500
 
 DYNAMIC_TERMINALS = {
         "NOUN"        : "noun",
-        "TRANSITIVE_VERB"         : "verb",
-        "INTRANSITIVE_VERB"       : "verb",
+        "VERB"        : "verb",
         "ADJECTIVE"   : "adjective",
         "ADVERB"      : "adverb",
 }

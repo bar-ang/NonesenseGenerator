@@ -17,11 +17,14 @@ def pretty(sentence):
     #        sentence.pop(i)
     return " ".join(sentence).capitalize() + "."
 
-def jibberish(root="SENTENCE", parse_tree=PARSE_TREE):
+def jibberish(root="SPEECH", parse_tree=PARSE_TREE):
     if is_terminal(root):
         choice = [random_word(root)]
         parse_tree[root] = choice
         return choice
+
+    if root not in RULES:
+        return ["[? %s ?]" % root]
 
     sentence = []
     rule = random.choice(RULES[root])
