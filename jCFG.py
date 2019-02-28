@@ -43,7 +43,7 @@ def is_terminal(var):
 def random_word(var):
     if var in DYNAMIC_TERMINALS:
         part_of_speech = DYNAMIC_TERMINALS[var]
-        return INVENTORY[part_of_speech].pop()
+        return random.choice(INVENTORY[part_of_speech])
     elif var in TERMINALS:
         return random.choice(TERMINALS[var])
     else:
